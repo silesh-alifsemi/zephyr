@@ -1,0 +1,29 @@
+/*
+ * Copyright (c) 2025 Alif Semiconductor
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <freq.h>
+
+/ {
+	clocks {
+		syst_aclk: axi-clk {
+			compatible = "fixed-clock";
+			clock-frequency = <DT_FREQ_M(400)>;
+			#clock-cells = <0>;
+		};
+
+		syst_hclk: ahb-clk {
+			compatible = "fixed-clock";
+			clock-frequency = <DT_FREQ_M(200)>;
+			#clock-cells = <0>;
+		};
+
+		syst_pclk: apb-clk {
+			compatible = "fixed-clock";
+			clock-frequency = <DT_FREQ_M(100)>;
+			#clock-cells = <0>;
+		};
+	};
+};
