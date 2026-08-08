@@ -30,4 +30,19 @@
 		current-speed = <115200>;
 		status = "disabled";
 	};
+
+	/* The E1C series only implements LPTIMER0 and LPTIMER1 */
+	lptimer2: timer@42001028 {
+		compatible = "snps,dw-timers";
+		reg = <0x42001028 0x14>;
+		clocks = <&clockctrl ALIF_LPTIMER2_S32K_CLK>;
+		status = "disabled";
+	};
+
+	lptimer3: timer@4200103c {
+		compatible = "snps,dw-timers";
+		reg = <0x4200103c 0x14>;
+		clocks = <&clockctrl ALIF_LPTIMER3_S32K_CLK>;
+		status = "disabled";
+	};
 };
