@@ -26,3 +26,19 @@
 	pinctrl-0 = <&pinctrl_uart4>;
 	pinctrl-names = "default";
 };
+
+&lptimer0 {
+	status = "okay";
+};
+
+&lptimer1 {
+	status = "okay";
+};
+
+&lptimer2 {
+	status = "okay";
+};
+
+&lptimer3 {
+	status = "okay";
+};
