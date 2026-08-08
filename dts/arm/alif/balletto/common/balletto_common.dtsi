@@ -59,6 +59,24 @@
 			clock-frequency = <DT_FREQ_M(40)>;
 			#clock-cells = <0>;
 		};
+
+		/*
+		 * Always-on clocks in the VBAT domain. S32K_CLK is driven by
+		 * either the LFXO (32.768 kHz crystal) or the LFRC (32.7 kHz
+		 * typical) oscillator, selected by ANA MISC_CTRL[SEL_32K].
+		 * Boards running from the LFRC should override the frequency.
+		 */
+		s32k_clk: s32k-clk {
+			compatible = "fixed-clock";
+			clock-frequency = <32768>;
+			#clock-cells = <0>;
+		};
+
+		clk_128k: clk-128k {
+			compatible = "fixed-clock";
+			clock-frequency = <128000>;
+			#clock-cells = <0>;
+		};
 	};
 
 	soc: soc {

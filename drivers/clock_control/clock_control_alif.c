@@ -65,6 +65,8 @@ struct alif_clock_control_config {
 #define ALIF_CLOCK_SYST_ACLK_FREQ    DT_PROP(DT_NODELABEL(syst_aclk), clock_frequency)
 #define ALIF_CLOCK_SYST_HCLK_FREQ    DT_PROP(DT_NODELABEL(syst_hclk), clock_frequency)
 #define ALIF_CLOCK_SYST_PCLK_FREQ    DT_PROP(DT_NODELABEL(syst_pclk), clock_frequency)
+#define ALIF_CLOCK_S32K_FREQ         DT_PROP(DT_NODELABEL(s32k_clk), clock_frequency)
+#define ALIF_CLOCK_128K_FREQ         DT_PROP(DT_NODELABEL(clk_128k), clock_frequency)
 
 /*
  * Clock Configuration Field Extraction Macros
@@ -213,6 +215,10 @@ static uint32_t alif_get_clock_freq(uint32_t clock_id)
 		return ALIF_CLOCK_SYST_HCLK_FREQ;
 	case ALIF_PARENT_CLK_SYST_PCLK:
 		return ALIF_CLOCK_SYST_PCLK_FREQ;
+	case ALIF_PARENT_CLK_S32K:
+		return ALIF_CLOCK_S32K_FREQ;
+	case ALIF_PARENT_CLK_128K:
+		return ALIF_CLOCK_128K_FREQ;
 	default:
 		__ASSERT(false, "Invalid parent clock: %u", parent_clk);
 		return 0;
