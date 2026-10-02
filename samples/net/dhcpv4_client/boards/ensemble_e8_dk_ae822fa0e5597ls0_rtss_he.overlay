@@ -1,0 +1,11 @@
+/*
+ * SPDX-FileCopyrightText: Copyright Alif Semiconductor
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/* The Ethernet MAC cannot access DTCM, run from system SRAM instead */
+/ {
+	chosen {
+		zephyr,sram = &sram0;
+	};
+};
