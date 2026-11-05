@@ -32,6 +32,7 @@ config SOC_FAMILY_ENSEMBLE_APSS
 	select ARM
 	select CPU_CORTEX_A32
 	select ARM_ARCH_TIMER if SYS_CLOCK_EXISTS
+	select VFP_DP_D32_FP16_FMAC if !USE_SWITCH
 	imply XIP
 
 rsource "*/Kconfig"
