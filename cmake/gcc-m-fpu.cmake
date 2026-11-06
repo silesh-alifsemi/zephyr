@@ -3,9 +3,7 @@
 # Determines what argument to give to -mfpu= based on the
 # KConfig'uration and sets this to GCC_M_FPU
 
-if(CONFIG_FPU)
-
-if("${ARCH}" STREQUAL "arm")
+if(CONFIG_FPU AND "${ARCH}" STREQUAL "arm")
   if(CONFIG_CPU_AARCH32_CORTEX_R)
     if(CONFIG_CPU_CORTEX_R4 OR CONFIG_CPU_CORTEX_R5 OR CONFIG_CPU_CORTEX_R8) # VFPv3
       if(CONFIG_VFP_FEATURE_DOUBLE_PRECISION)
@@ -63,5 +61,3 @@ if("${ARCH}" STREQUAL "arm")
     endif()
   endif()
 endif()
-
-endif() #CONFIG_FPU
